@@ -1,16 +1,15 @@
 //class-->className    for-->htmlFor
 import './App1.css';
 import React, { useState } from 'react'
-import About from './Components/About';
+// import About from './Components/About';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -41,18 +40,18 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Navbar title="TextUtils" About="About" mode={mode} toggleStyle={toggleStyle} />
         <Alert alert={alert} />
         <div className="container my-3">
-        <Routes>
-          <Route path="/" element={
+        {/* <Routes> */}
+          {/* <Route path="/" element={ */}
             <TextForm showalert={showalert} heading="Enter the text to analyze" mode={mode} />
-          } />
-          <Route path="About/" element={<About />} />
-        </Routes>
+          {/* // } /> */}
+          {/* <Route path="About/" element={<About />} /> */}
+        {/* </Routes> */}
         </div>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </>
   );
 }

@@ -18,11 +18,8 @@ export default function TextForm(props) {
         props.showalert('Text Cleared!','success');
     }
     const handleCopy = () => {
-        let text1 = document.getElementById('myBox');
-        text1.select();
-        navigator.clipboard.writeText(text1.value);
-        props.showalert('Copied to Clipboard!','success');
-
+        navigator.clipboard.writeText(text); 
+        props.showalert("Copied to Clipboard!", "success");
     }
     const handleOnChange = (event) => {
         // console.log("On change");
