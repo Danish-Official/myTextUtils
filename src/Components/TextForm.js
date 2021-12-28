@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 export default function TextForm(props) {
-
+    
+    const [text, setText] = useState('Enter text here');
     const handleUpClick = () => {
         // console.log("Uppercase was clicked");
         let newText1= text.toUpperCase();
@@ -25,12 +26,11 @@ export default function TextForm(props) {
         // console.log("On change");
         setText(event.target.value);
     }
-    const [text, setText] = useState('Enter text here');
     return (
         <div className="container" style={{color: props.mode === 'dark'?'white':'black'}}>
             <h1 >{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" value={text} onChange={handleOnChange} style={{color:props.mode==='dark'?'white':'black',backgroundColor: props.mode==='dark'?'#3B3B3B':'white'}} id="myBox" rows="12"></textarea>
+                <textarea className="form-control" value={text} onChange={handleOnChange} style={{color:props.mode==='dark'?'white':'black',backgroundColor: props.mode==='dark'?'#3B3B3B':'white',resize:'none'}} id="myBox" rows="12"></textarea>
             </div>
             <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
             <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
